@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="smallBear" class="org.type.animal.impls.small.SmallBear" />
+	<bean id="smallSloth" class="org.type.animal.impls.small.SmallSloth" />
+	<bean id="smallTiger" class="org.type.animal.impls.small.SmallTiger" />
+
+	<bean id="oldBear" class="org.type.animal.impls.old.OldBear" />
+	<bean id="oldSloth" class="org.type.animal.impls.old.OldSloth" />
+	<bean id="oldTiger" class="org.type.animal.impls.old.OldTiger" />
+
+	<bean id="action" class="org.type.animal.impls.getActions.GetActions">
+
+		<!-- uses: constructor -->
+		<constructor-arg ref="smallBear" />
+		<constructor-arg ref="smallSloth" />
+		<constructor-arg ref="smallTiger" />
+
+		<!-- uses: get and set -->
+		<property name="bear" ref="oldBear" />
+		<property name="sloth" ref="oldSloth" />
+		<property name="tiger" ref="oldTiger" />
+
+	</bean>
+</beans>
